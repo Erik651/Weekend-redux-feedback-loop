@@ -8,8 +8,10 @@ import FeelingToday from '../FeelingToday/FeelingToday.jsx';
 import UnderstandingContent from '../UnderstandingContent/UnderstandingContent';
 import SubmissionSuccess from '../SubmissionSubmit/SubmissionSuccess';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+import LeaveComments from '../LeaveComment/LeaveComments.jsx';
 import Header from '../Header/Header.js';
 import { Router } from 'express';
+import LeaveComments from '../LeaveComment/LeaveComments.jsx';
 
 function App() {
   return (
@@ -31,6 +33,9 @@ function App() {
           </Route>
           <Route exact path="reviewFeedback">
             <ReviewFeedback />
+          </Route>
+          <Route exact path="leaveComments">
+            <LeaveComments />
           </Route>
         </Router>
         <h4>Don't forget it!</h4>
