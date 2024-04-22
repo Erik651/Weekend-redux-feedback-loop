@@ -9,6 +9,7 @@ import UnderstandingContent from '../UnderstandingContent/UnderstandingContent';
 import SubmissionSuccess from '../SubmissionSubmit/SubmissionSuccess';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 import LeaveComments from '../LeaveComment/LeaveComments.jsx';
+import Home from '../Home/Home.jsx';
 //import Header from '../Header/Header.js';
 //import { Router } from 'express';
 
@@ -19,6 +20,9 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Feedback!</h1>
         <Router>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route exact path="/support">
             <BeingSupported />
           </Route>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 
 function FeelingToday() {
   const [scoreFeeling, setScoreFeeling] = useState('');
@@ -11,6 +11,7 @@ const handleClick = (event) => {
   console.log(`adding feeling score`, { scoreFeeling });
 
   let action = {
+    type: 'ADD_FEELING_SCORE',
     payload: { scoreFeeling: scoreFeeling}
   };
 
@@ -20,19 +21,19 @@ const handleClick = (event) => {
   history.push('/understanding')
 }
 
-return(
+return(<>
   <section>
 <h2>How are you feeling today?</h2>
 <input
 required
 placeholder="Feeling 1-5"
 value={scoreFeeling}
-onChange={(event) => setScore(event.target.value)}/>
+onChange={(event) => setScoreFeeling(event.target.value)}/>
 Feeling? 
 
 <button onClick={handleClick}>Next</button>
 
-  </section>
+  </section></>
 );
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 function LeaveComments() {
@@ -11,6 +11,7 @@ function LeaveComments() {
     console.log(`adding comments to leave comments`, { comment });
 
     let action = {
+      type: 'ADD_COMMENTS',
       payload: { comment: comment }
     };
 
@@ -21,7 +22,7 @@ function LeaveComments() {
   }
 
   return (
-
+<>
     <section>
       <h2>Any comments you want to leave?</h2>
       <input
@@ -33,6 +34,7 @@ function LeaveComments() {
       <button onClick={handleClick}>Next</button>
       
     </section>
+    </>
   )
 
 }

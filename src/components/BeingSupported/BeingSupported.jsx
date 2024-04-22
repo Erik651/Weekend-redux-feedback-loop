@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
 function BeingSupported() {
@@ -11,6 +11,7 @@ function BeingSupported() {
     console.log(`adding support score`, { scoreSupport });
 
     let action = {
+      type: 'ADD_SUPPORTED_SCORE',
       payload: { scoreSupport: scoreSupport }
     };
 
@@ -19,17 +20,17 @@ function BeingSupported() {
     history.push('/comments');
   };
 
-  return (
+  return (<>
     <section>
       <h2>How well are you being supported?</h2>
       <input
       required
       placeholder='Feeling 1-5'
       value={scoreSupport}
-      onChange={(event) => setScore(event.target.value)}/>Support?
+      onChange={(event) => setScoreSupport(event.target.value)}/>Support?
 
       <button onClick={handleClick}>Next</button>
-    </section>
+    </section></>
   );
 }
 export default BeingSupported;

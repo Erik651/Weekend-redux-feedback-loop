@@ -8,9 +8,10 @@ function UnderstandingContent() {
   const dispatch = useDispatch();
 
   const handleClick = (event) => {
-    console.log(`adding understanding score`, { score });
+    console.log(`adding understanding score`, { scoreUnderstanding });
 
     let action = {
+      type: 'ADD_UNDERSTANDING_SCORE',
       payload: { scoreUnderstanding: scoreUnderstanding }
     };
 
@@ -19,17 +20,19 @@ function UnderstandingContent() {
     alert('Headed to Being Supported page');
     history.push('/support')
   }
-return (
+return (<>
   <section>
+
 <h2>How well are you understanding the content?</h2>
 <input
 required
 placeholder="Understanding 1-5"
 value={scoreUnderstanding}
-onChange={(event) => setScore(event.target.value)}/>Understanding?
+onChange={(event) => setScoreUnderstanding(event.target.value)}/>Understanding?
 
 <button onClick={handleClick}>Next</button>
   </section>
+  </>
 )
 }
 
