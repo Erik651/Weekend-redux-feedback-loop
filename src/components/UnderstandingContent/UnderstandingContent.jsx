@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 
 function UnderstandingContent() {
-  const [score, setScore] = useState('');
+  const [scoreUnderstanding, setScoreUnderstanding] = useState('');
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -11,7 +11,7 @@ function UnderstandingContent() {
     console.log(`adding understanding score`, { score });
 
     let action = {
-      payload: { score: score }
+      payload: { scoreUnderstanding: scoreUnderstanding }
     };
 
     dispatch(action);
@@ -25,7 +25,7 @@ return (
 <input
 required
 placeholder="Understanding 1-5"
-value={score}
+value={scoreUnderstanding}
 onChange={(event) => setScore(event.target.value)}/>Understanding?
 
 <button onClick={handleClick}>Next</button>

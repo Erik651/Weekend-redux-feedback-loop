@@ -7,10 +7,21 @@ const pool = require('../modules/pool')
 router.post('/', (req, res) => {
   console.log(`Post /feedback req.body:`, req.body);
   const sqlText = `
-  INSERT INTO "feedback" ("?", "?")
-  VALUES ($1, $2);`
+  INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+  VALUES ($1, $2, $3, $4);
+  `
+  const sqlValues = [req.body.feeling, req.body.understanding, req.body.support, req.body.comments]
 
-})
+  pool.query(sqlText, sqlValues)
+  .then((result) => {
+    res.sendStatus(201);
+  })
+  .catch((err) => {
+    console.log(`Error adding new feedback`, err);
+    res,sendStatus(500);
+  });
+
+});
 
 
 // DO NOT EDIT THIS ROUTE

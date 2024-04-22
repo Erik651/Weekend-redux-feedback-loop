@@ -3,15 +3,15 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function FeelingToday() {
-  const [score, setScore] = useState('');
+  const [scoreFeeling, setScoreFeeling] = useState('');
 const history = useHistory();
 const dispatch = useDispatch();
 
 const handleClick = (event) => {
-  console.log(`adding feeling score`, { score });
+  console.log(`adding feeling score`, { scoreFeeling });
 
   let action = {
-    payload: { score: score}
+    payload: { scoreFeeling: scoreFeeling}
   };
 
   dispatch(action);
@@ -26,7 +26,7 @@ return(
 <input
 required
 placeholder="Feeling 1-5"
-value={score}
+value={scoreFeeling}
 onChange={(event) => setScore(event.target.value)}/>
 Feeling? 
 

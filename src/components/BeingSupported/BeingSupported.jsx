@@ -3,15 +3,15 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useDispatch } from 'react-redux';
 
 function BeingSupported() {
-  const [score, setScore] = useState('');
+  const [scoreSupport, setScoreSupport] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleClick = () => {
-    console.log(`adding support score`, { score });
+    console.log(`adding support score`, { scoreSupport });
 
     let action = {
-      payload: { score: score }
+      payload: { scoreSupport: scoreSupport }
     };
 
     dispatch(action);
@@ -25,7 +25,7 @@ function BeingSupported() {
       <input
       required
       placeholder='Feeling 1-5'
-      value={score}
+      value={scoreSupport}
       onChange={(event) => setScore(event.target.value)}/>Support?
 
       <button onClick={handleClick}>Next</button>
