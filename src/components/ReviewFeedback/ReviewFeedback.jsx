@@ -1,5 +1,14 @@
+import React from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 function ReviewFeedback() {
 
+  const history = useHistory();
+
+  const handleClick = () => {
+    alert(' Headed to Submission Success page');
+    history.push('/submissionSuccess')
+  }
 
   return(
 
@@ -7,7 +16,7 @@ function ReviewFeedback() {
 
       <h2>Review Your Feedback</h2>
       <ul>Feelings Understanding Support Comments: Text</ul>
-      <button>Submit</button>
+      <button onClick={handleClick}>Submit</button>
     </section>
   )
 }
