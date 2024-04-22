@@ -7,7 +7,7 @@ function UnderstandingContent() {
 
   const handleClick = () => {
     alert('Headed to Being Supported page');
-    history.push('/beingSupported')
+    history.push('/support')
   }
 return (
   <section>

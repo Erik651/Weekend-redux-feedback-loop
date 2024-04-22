@@ -8,7 +8,7 @@ function LeaveComments() {
 
   const handleClick = () => {
     alert('Headed to Review Feedback page');
-    history.push('/reviewFeedback');
+    history.push('/review');
   }
 
   return (

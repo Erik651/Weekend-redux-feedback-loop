@@ -9,9 +9,9 @@ import UnderstandingContent from '../UnderstandingContent/UnderstandingContent';
 import SubmissionSuccess from '../SubmissionSubmit/SubmissionSuccess';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 import LeaveComments from '../LeaveComment/LeaveComments.jsx';
-import Header from '../Header/Header.js';
-import { Router } from 'express';
-import LeaveComments from '../LeaveComment/LeaveComments.jsx';
+//import Header from '../Header/Header.js';
+//import { Router } from 'express';
+
 
 function App() {
   return (
@@ -19,22 +19,22 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Feedback!</h1>
         <Router>
-          <Route exact path="/beingSupported">
+          <Route exact path="/support">
             <BeingSupported />
           </Route>
-          <Route exact path="/feelingToday">
+          <Route exact path="/feeling">
             <FeelingToday />
           </Route>
-          <Route exact path="understandingContent">
+          <Route exact path="/understanding">
             <UnderstandingContent />
           </Route>
           <Route exact path="submissionSuccess">
             <SubmissionSuccess />
           </Route>
-          <Route exact path="reviewFeedback">
+          <Route exact path="/review">
             <ReviewFeedback />
           </Route>
-          <Route exact path="leaveComments">
+          <Route exact path="/comments">
             <LeaveComments />
           </Route>
         </Router>
