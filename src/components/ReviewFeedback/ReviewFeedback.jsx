@@ -1,20 +1,29 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+// import BeingSupported from "../BeingSupported/BeingSupported";
+// import FeelingToday from "../FeelingToday/FeelingToday";
+// import LeaveComment from "../LeaveComment/LeaveComment";
+// import UnderstandingContent from "../UnderstandingContent/UnderstandingContent";
+import { useSelector } from "react-redux";
 
 
 function ReviewFeedback() {
 
   const history = useHistory();
+  const feelingToday = useSelector(store => store.feelingToday);
 
   const handleClick = () => {
 
-    console.log(`adding new feedback submission`, { scoreSupport, scoreFeeling, scoreUnderstanding, comment});
+    console.log(`adding new feedback submission`, feelingToday);
 
     let action = { type: 'ADD_FEEDBACK',
-  payload: { scoreSupport: scoreSupport, scoreFeeling: scoreFeeling, scoreUnderstanding: scoreUnderstanding, comment: comment }
+  payload: { feeling: feelingToday }
 };
 
-dispatch(action);
+//dispatch(action);
+
+
+//axios.post
 
 
     alert(' Headed to Submission Success page');
@@ -27,6 +36,8 @@ dispatch(action);
     <section>
       <h2>Review Your Feedback</h2>
       <ul>Feelings Understanding Support Comments: Text</ul>
+
+    
       <button onClick={handleClick}>Submit</button>
     </section>
       </>

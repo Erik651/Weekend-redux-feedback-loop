@@ -7,7 +7,7 @@ function BeingSupported() {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const handleClick = () => {
+  const handleClick = (event) => {
     console.log(`adding support score`, { scoreSupport });
 
     let action = {
@@ -17,7 +17,7 @@ function BeingSupported() {
 
     dispatch(action);
     alert('Headed to Comments page');
-    history.push('/comments');
+    history.push('/comment');
   };
 
   return (<>

@@ -8,7 +8,7 @@ import FeelingToday from '../FeelingToday/FeelingToday.jsx';
 import UnderstandingContent from '../UnderstandingContent/UnderstandingContent';
 import SubmissionSuccess from '../SubmissionSubmit/SubmissionSuccess';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
-import LeaveComments from '../LeaveComment/LeaveComments.jsx';
+import LeaveComment from '../LeaveComment/LeaveComment.jsx';
 import Home from '../Home/Home.jsx';
 //import Header from '../Header/Header.js';
 //import { Router } from 'express';
@@ -38,8 +38,8 @@ function App() {
           <Route exact path="/review">
             <ReviewFeedback />
           </Route>
-          <Route exact path="/comments">
-            <LeaveComments />
+          <Route exact path="/comment">
+            <LeaveComment />
           </Route>
         </Router>
         <h4>Don't forget it!</h4>

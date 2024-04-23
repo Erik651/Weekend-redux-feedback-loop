@@ -12,7 +12,7 @@ const feedbackList = (state = [], action) => {
 }
 
 const leaveComment = (state = '', action) => {
-  if (action.type === 'ADD_COMMENTS') {
+  if (action.type === 'ADD_COMMENT') {
     return action.payload;
   }
   return state;
@@ -47,6 +47,10 @@ const reduxStore = createStore(
     // reducers go here
     feedbackList,
     leaveComment,
+    feelingToday,
+    beingSupported,
+    understandingContent,
+
   }),
   applyMiddleware(logger)
 );

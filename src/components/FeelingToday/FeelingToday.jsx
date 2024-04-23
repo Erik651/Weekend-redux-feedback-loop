@@ -12,7 +12,7 @@ const handleClick = (event) => {
 
   let action = {
     type: 'ADD_FEELING_SCORE',
-    payload: { scoreFeeling: scoreFeeling}
+    payload: scoreFeeling
   };
 
   dispatch(action);

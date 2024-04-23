@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-function LeaveComments() {
-  const [comment, setComment] = useState('Please leave comments');
+function LeaveComment() {
+  const [comment, setComment] = useState('Please leave comment');
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleClick = (event) => {
-    console.log(`adding comments to leave comments`, { comment });
+    console.log(`adding comments to leave comment`, { comment });
 
     let action = {
-      type: 'ADD_COMMENTS',
+      type: 'ADD_COMMENT',
       payload: { comment: comment }
     };
 
@@ -27,7 +27,7 @@ function LeaveComments() {
       <h2>Any comments you want to leave?</h2>
       <input
       required
-      placeholder="Please leave comments"
+      placeholder="Please leave comment"
       value={comment}
       onChange={(event) => setComment(event.target.value)}/>Comments
 
@@ -39,4 +39,4 @@ function LeaveComments() {
 
 }
 
-export default LeaveComments;
+export default LeaveComment;
