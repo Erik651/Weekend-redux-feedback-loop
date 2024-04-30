@@ -5,34 +5,74 @@ import { useHistory } from "react-router-dom";
 // import LeaveComment from "../LeaveComment/LeaveComment";
 // import UnderstandingContent from "../UnderstandingContent/UnderstandingContent";
 import { useSelector } from "react-redux";
+import axios from "axios";
+
 
 
 function ReviewFeedback() {
 
   const history = useHistory();
   const feelingToday = useSelector(store => store.feelingToday);
+  const understandingContent = useSelector(store => store.understandingContent);
+  const leaveComment = useSelector(store => store.leaveComment);
+  const beingSupported = useSelector(store => store.beingSupported);
 
   const handleClick = () => {
 
     console.log(`adding new feedback submission`, feelingToday);
 
-    let action = { type: 'ADD_FEEDBACK',
-  payload: { feeling: feelingToday }
-};
+    let action = { type: 'ADD_FEEDBACK', feeling: feelingToday, understanding: understandingContent, support: beingSupported, comment: leaveComment }
+
+    axios.post('/api/feedback', action)
+    .then((response) => {
+      // call function to add reviews to dom
+      // add function to reset survey
+      alert(' Headed to Submission Success page');
+      history.push('/submissionSuccess')
+})
+.catch((error) => {
+  console.log(error);
+  alert(`Something went wrong!!`);
+});
+} 
+
 
 //dispatch(action);
 
 
 //axios.post
+// const addTask = (evt) => {
+//   evt.preventDefault();
+//   console.log(`The add task to do is ${taskToDoTaskName}`);
+//   const data = { taskName: taskToDoTaskName };
+//   axios
+//     .post('/api/todo', data)
+//     .then((response) => {
+//       fetchTask();
+//       setTaskToDo('');
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       alert('Something went wrong!');
+//     });
+// };
 
 
-    alert(' Headed to Submission Success page');
-    history.push('/submissionSuccess')
-  }
 
-  return(
 
-<>
+ 
+
+
+
+
+
+
+
+
+    
+    return(
+      
+      <>
     <section>
       <h2>Review Your Feedback</h2>
       <ul>Feelings Understanding Support Comments: Text</ul>
@@ -43,5 +83,6 @@ function ReviewFeedback() {
       </>
   )
 }
+
 
 export default ReviewFeedback;

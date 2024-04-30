@@ -32,7 +32,7 @@ function App() {
           <Route exact path="/understanding">
             <UnderstandingContent />
           </Route>
-          <Route exact path="submissionSuccess">
+          <Route exact path="/submissionSuccess">
             <SubmissionSuccess />
           </Route>
           <Route exact path="/review">

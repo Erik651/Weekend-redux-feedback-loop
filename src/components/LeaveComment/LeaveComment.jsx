@@ -12,7 +12,7 @@ function LeaveComment() {
 
     let action = {
       type: 'ADD_COMMENT',
-      payload: { comment: comment }
+      payload: comment 
     };
 
     dispatch(action);

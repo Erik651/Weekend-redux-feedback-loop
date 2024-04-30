@@ -12,7 +12,7 @@ function UnderstandingContent() {
 
     let action = {
       type: 'ADD_UNDERSTANDING_SCORE',
-      payload: { scoreUnderstanding: scoreUnderstanding }
+      payload: scoreUnderstanding 
     };
 
     dispatch(action);

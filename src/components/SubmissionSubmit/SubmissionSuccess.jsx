@@ -1,3 +1,5 @@
+import React from "react";
+
 function SubmissionSuccess() {
 
 // function newFeedback() reset the survey

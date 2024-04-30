@@ -12,7 +12,7 @@ function BeingSupported() {
 
     let action = {
       type: 'ADD_SUPPORTED_SCORE',
-      payload: { scoreSupport: scoreSupport }
+      payload: scoreSupport 
     };
 
     dispatch(action);
