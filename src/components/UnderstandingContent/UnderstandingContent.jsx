@@ -14,7 +14,9 @@ function UnderstandingContent() {
       type: 'ADD_UNDERSTANDING_SCORE',
       payload: scoreUnderstanding 
     };
-
+if ( scoreUnderstanding === ''){
+  return alert('please add feedback to proceed')
+}
     dispatch(action);
 
     alert('Headed to Being Supported page');

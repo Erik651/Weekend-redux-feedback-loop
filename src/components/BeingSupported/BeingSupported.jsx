@@ -14,7 +14,9 @@ function BeingSupported() {
       type: 'ADD_SUPPORTED_SCORE',
       payload: scoreSupport 
     };
-
+if (scoreSupport === ''){
+  return alert('please leave feedback comment to proceed')
+}
     dispatch(action);
     alert('Headed to Comments page');
     history.push('/comment');

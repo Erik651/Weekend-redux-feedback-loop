@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 function LeaveComment() {
-  const [comment, setComment] = useState('Please leave comment');
+  const [comment, setComment] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -14,7 +14,9 @@ function LeaveComment() {
       type: 'ADD_COMMENT',
       payload: comment 
     };
-
+if (comment === ''){
+  return alert('please add Comment to proceed')
+}
     dispatch(action);
 
     alert('Headed to Review Feedback page');
@@ -27,7 +29,7 @@ function LeaveComment() {
       <h2>Any comments you want to leave?</h2>
       <input
       required
-      placeholder="Please leave comment"
+      placeholder='please leave feedback'
       value={comment}
       onChange={(event) => setComment(event.target.value)}/>Comments
 

@@ -14,7 +14,9 @@ const handleClick = (event) => {
     type: 'ADD_FEELING_SCORE',
     payload: scoreFeeling
   };
-
+if (scoreFeeling === ''){
+  return alert('please add score value to proceed')
+}
   dispatch(action);
 
   alert('Headed to Understanding Content feedback page')
