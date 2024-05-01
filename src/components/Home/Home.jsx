@@ -65,11 +65,11 @@ onChange={(event) => setName(event.target.value)}/>
                   <br/>
                   How are you feeling today?{feedback.feeling}
                   <br />
-                  Understanding {feedback.understanding}
+                  How are you understanding the content? {feedback.understanding}
                   <br />
-                  {feedback.support}
+                  How well are you being supported? {feedback.support}
                   <br />
-                  {feedback.comment}
+                  Your feedback comments: {feedback.comments}
                   <br/>
                   <br/>
                   <br/>

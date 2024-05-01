@@ -7,7 +7,7 @@ const pool = require('../modules/pool')
 router.post('/', (req, res) => {
   console.log(`Post /feedback req.body:`, req.body);
 
-  const sqlValues = [req.body.feeling, req.body.understanding, req.body.support, req.body.comments]
+  const sqlValues = [req.body.feeling, req.body.understanding, req.body.support, req.body.comments, req.body.name]
 
   const sqlText = `
   INSERT INTO "feedback" ("feeling", "understanding", "support", "comments", "name")
