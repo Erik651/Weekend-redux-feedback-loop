@@ -30,23 +30,35 @@ function ReviewFeedback() {
     };
 
     axios
-    .post('/api/feedback', action)
-    .then((response) => {
-      // call function to add reviews to dom
-      // add function to reset survey
-      alert(' Headed to Submission Success page');
-      history.push('/submissionSuccess');
-    })
-    .catch((error) => {
-      console.log(error);
-      alert(`Something went wrong!!`);
-    });
-    
+      .post('/api/feedback', action)
+      .then((response) => {
+        // call function to add reviews to dom
+        // add function to reset survey
+        alert(' Headed to Submission Success page');
+        history.push('/submissionSuccess');
+      })
+      .catch((error) => {
+        console.log(error);
+        alert(`Something went wrong!!`);
+      });
   };
   const feelingEdit = () => {
-    console.log('editing button')
+    console.log('editing button');
     history.push('/feeling');
     alert('Proceed to edit "Feeling Today" score');
+  };
+
+  const understandingEdit = () => {
+    history.push('/understanding');
+    alert('Proceed to edit "Understanding Content" score');
+  };
+
+  const supportedEdit = () => {
+    history.push('/support')
+  };
+
+  const commentEdit = () => {
+    history.push('/comment')
   };
 
   //dispatch(action);
@@ -77,9 +89,18 @@ function ReviewFeedback() {
           Feeling Today score: {feelingToday}
           <button onClick={feelingEdit}>Edit</button>
         </li>
-        <li>Understanding Content score: {understandingContent}</li>
-        <li>Feeling Supported score: {beingSupported}</li>
-        <li>Feedback Comments: {leaveComment}</li>
+        <li>
+          Understanding Content score: {understandingContent}{' '}
+          <button onClick={understandingEdit}>Edit</button>
+        </li>
+        <li>
+          Feeling Supported score: {beingSupported}{' '}
+          <button onClick={supportedEdit}>Edit</button>
+        </li>
+        <li>
+          Feedback Comments: {leaveComment}{' '}
+          <button onClick={commentEdit}>Edit</button>
+        </li>
 
         <button onClick={handleClick}>Submit</button>
       </section>
