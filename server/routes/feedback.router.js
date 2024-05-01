@@ -10,8 +10,8 @@ router.post('/', (req, res) => {
   const sqlValues = [req.body.feeling, req.body.understanding, req.body.support, req.body.comments]
 
   const sqlText = `
-  INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-  VALUES ($1, $2, $3, $4);
+  INSERT INTO "feedback" ("feeling", "understanding", "support", "comments", "name")
+  VALUES ($1, $2, $3, $4, $5);
   `
 
   pool.query(sqlText, sqlValues)

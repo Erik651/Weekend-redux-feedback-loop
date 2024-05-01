@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 
 function FeelingToday() {
   const [scoreFeeling, setScoreFeeling] = useState('');
+ 
 const history = useHistory();
 const dispatch = useDispatch();
 

@@ -16,12 +16,13 @@ function ReviewFeedback() {
   const understandingContent = useSelector(store => store.understandingContent);
   const leaveComment = useSelector(store => store.leaveComment);
   const beingSupported = useSelector(store => store.beingSupported);
+  const name = useSelector(store => store.name);
 
   const handleClick = () => {
 
     console.log(`adding new feedback submission`, feelingToday);
 
-    let action = { type: 'ADD_FEEDBACK', feeling: feelingToday, understanding: understandingContent, support: beingSupported, comment: leaveComment }
+    let action = { type: 'ADD_FEEDBACK', feeling: feelingToday, name: name, understanding: understandingContent, support: beingSupported, comment: leaveComment }
 
     axios.post('/api/feedback', action)
     .then((response) => {
@@ -75,8 +76,11 @@ function ReviewFeedback() {
       <>
     <section>
       <h2>Review Your Feedback</h2>
-      <ul>Feelings Understanding Support Comments: Text</ul>
-
+      <ul>Survey Scores and Comments</ul>
+      <li>Feeling Today score: {feelingToday}</li>
+      <li>Understanding Content score: {understandingContent}</li>
+      <li>Feeling Supported score: {beingSupported}</li>
+      <li>Feedback Comments: {leaveComment}</li>
     
       <button onClick={handleClick}>Submit</button>
     </section>
