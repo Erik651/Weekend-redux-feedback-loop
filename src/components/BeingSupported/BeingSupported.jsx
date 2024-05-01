@@ -14,9 +14,15 @@ function BeingSupported() {
       type: 'ADD_SUPPORTED_SCORE',
       payload: scoreSupport 
     };
-if (scoreSupport === ''){
-  return alert('please leave feedback comment to proceed')
-}
+    if (scoreSupport === ''){
+      return alert('please add score value between 1-5 to proceed')
+    }
+    if (scoreSupport > 5) {
+      return alert(`${scoreSupport} ?, Wow!! That's flattering, but please leave a value between 1-5.`)
+    }
+    if (scoreSupport < 1) {
+      return alert(`${scoreSupport}? Zero? Really?? Come on? Serious? Please leave a value between 1-5.`)
+    }
     dispatch(action);
     alert('Headed to Comments page');
     history.push('/comment');

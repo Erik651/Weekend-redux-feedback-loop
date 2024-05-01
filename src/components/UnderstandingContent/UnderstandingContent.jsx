@@ -14,9 +14,15 @@ function UnderstandingContent() {
       type: 'ADD_UNDERSTANDING_SCORE',
       payload: scoreUnderstanding 
     };
-if ( scoreUnderstanding === ''){
-  return alert('please add feedback to proceed')
-}
+    if (scoreUnderstanding === ''){
+      return alert('please add score value between 1-5 to proceed')
+    }
+    if (scoreUnderstanding > 5) {
+      return alert(`${scoreUnderstanding} ?, Oh, Ok, Big Brain!! please leave a value between 1-5.`)
+    }
+    if (scoreUnderstanding < 1) {
+      return alert(`${scoreUnderstanding}? The singularity, cool, but Please leave a value between 1-5.`)
+    }
     dispatch(action);
 
     alert('Headed to Being Supported page');

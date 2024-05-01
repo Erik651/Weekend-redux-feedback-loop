@@ -14,9 +14,9 @@ function LeaveComment() {
       type: 'ADD_COMMENT',
       payload: comment 
     };
-if (comment === ''){
-  return alert('please add Comment to proceed')
-}
+// if (comment === ''){
+//   return alert('please add Comment to proceed')
+// }
     dispatch(action);
 
     alert('Headed to Review Feedback page');

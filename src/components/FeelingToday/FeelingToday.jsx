@@ -15,7 +15,13 @@ const handleClick = (event) => {
     payload: scoreFeeling
   };
 if (scoreFeeling === ''){
-  return alert('please add score value to proceed')
+  return alert('please add score value between 1-5 to proceed')
+}
+if (scoreFeeling > 5) {
+  return alert(`${scoreFeeling} ?, That's too much Bob!!! Please leave a value between 1-5.`)
+}
+if (scoreFeeling < 1) {
+  return alert(`${scoreFeeling}? You're not dead yet!!! Please leave a value between 1-5.`)
 }
   dispatch(action);
 
