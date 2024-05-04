@@ -33,12 +33,13 @@ return (<>
 
 <h2>How well are you understanding the content?</h2>
 <input
+data-testid="input"
 required
 placeholder="Understanding 1-5"
 value={scoreUnderstanding}
 onChange={(event) => setScoreUnderstanding(event.target.value)}/>Understanding?
 
-<button onClick={handleClick}>Next</button>
+<button  data-testid="next" onClick={handleClick}>Next</button>
   </section>
   </>
 )

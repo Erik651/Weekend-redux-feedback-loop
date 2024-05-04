@@ -7,11 +7,11 @@ const pool = require('../modules/pool')
 router.post('/', (req, res) => {
   console.log(`Post /feedback req.body:`, req.body);
 
-  const sqlValues = [req.body.feeling, req.body.understanding, req.body.support, req.body.comments, req.body.name]
+  const sqlValues = [req.body.feeling, req.body.understanding, req.body.support, req.body.comments]
 
   const sqlText = `
-  INSERT INTO "feedback" ("feeling", "understanding", "support", "comments", "name")
-  VALUES ($1, $2, $3, $4, $5);
+  INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
+  VALUES ($1, $2, $3, $4);
   `
 
   pool.query(sqlText, sqlValues)

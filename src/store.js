@@ -11,12 +11,12 @@ const feedbackList = (state = [], action) => {
   return state;
 }
 
-const name = (state = [], action) => {
-  if(action.type === 'ADD_NAME') {
-    return action.payload;
-  }
-  return state;
-}
+// const name = (state = [], action) => {
+//   if(action.type === 'ADD_NAME') {
+//     return action.payload;
+//   }
+//   return state;
+// }
 const leaveComment = (state = '', action) => {
   if (action.type === 'ADD_COMMENT') {
     return action.payload;
@@ -56,7 +56,7 @@ const reduxStore = createStore(
     feelingToday,
     beingSupported,
     understandingContent,
-    name,
+    // name,
 
   }),
   applyMiddleware(logger)

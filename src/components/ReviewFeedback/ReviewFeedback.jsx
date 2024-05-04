@@ -15,20 +15,17 @@ function ReviewFeedback() {
   );
   const leaveComment = useSelector((store) => store.leaveComment);
   const beingSupported = useSelector((store) => store.beingSupported);
-  const name = useSelector((store) => store.name);
+  // const name = useSelector((store) => store.name);
 
   const handleClick = () => {
     console.log(`adding new feedback submission`, feelingToday);
 
-    let action = {
-      type: 'ADD_FEEDBACK',
+    const action = {
       feeling: feelingToday,
       understanding: understandingContent,
       support: beingSupported,
-      comments: leaveComment,
-      name: name,
+      comments: leaveComment
     };
-
     axios
       .post('/api/feedback', action)
       .then((response) => {
@@ -44,7 +41,7 @@ function ReviewFeedback() {
   };
   const feelingEdit = () => {
     console.log('editing button');
-    history.push('/feeling');
+    history.push('/');
     alert('Proceed to edit "Feeling Today" score');
   };
 
@@ -102,7 +99,7 @@ function ReviewFeedback() {
           <button onClick={commentEdit}>Edit</button>
         </li>
 
-        <button onClick={handleClick}>Submit</button>
+        <button data-testid="next" onClick={handleClick}>Submit</button>
       </section>
     </>
   );

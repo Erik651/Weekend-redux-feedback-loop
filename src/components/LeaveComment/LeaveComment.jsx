@@ -28,12 +28,13 @@ function LeaveComment() {
     <section>
       <h2>Any comments you want to leave?</h2>
       <input
+      data-testid="input"
       required
       placeholder='please leave feedback'
       value={comment}
       onChange={(event) => setComment(event.target.value)}/>Comments
 
-      <button onClick={handleClick}>Next</button>
+      <button data-testid="next" onClick={handleClick}>Next</button>
       
     </section>
     </>

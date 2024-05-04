@@ -32,12 +32,13 @@ function BeingSupported() {
     <section>
       <h2>How well are you being supported?</h2>
       <input
+      data-testid="input"
       required
       placeholder='Feeling 1-5'
       value={scoreSupport}
       onChange={(event) => setScoreSupport(event.target.value)}/>Support?
 
-      <button onClick={handleClick}>Next</button>
+      <button data-testid="next" onClick={handleClick}>Next</button>
     </section></>
   );
 }

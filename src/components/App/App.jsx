@@ -9,7 +9,7 @@ import UnderstandingContent from '../UnderstandingContent/UnderstandingContent';
 import SubmissionSuccess from '../SubmissionSubmit/SubmissionSuccess';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 import LeaveComment from '../LeaveComment/LeaveComment.jsx';
-import Home from '../Home/Home.jsx';
+//import Home from '../Home/Home.jsx';
 //import Header from '../Header/Header.js';
 //import { Router } from 'express';
 
@@ -20,26 +20,26 @@ function App() {
       <header className="App-header">
         <h1 className="App-title">Feedback!</h1>
         <Router>
-          <Route exact path="/">
+          {/* <Route exact path="/">
             <Home />
-          </Route>
-          <Route exact path="/support">
-            <BeingSupported />
-          </Route>
-          <Route exact path="/feeling">
+          </Route> */}
+          <Route exact path="/">
             <FeelingToday />
           </Route>
           <Route exact path="/understanding">
             <UnderstandingContent />
           </Route>
-          <Route exact path="/submissionSuccess">
-            <SubmissionSuccess />
+          <Route exact path="/support">
+            <BeingSupported />
+          </Route>
+          <Route exact path="/comment">
+            <LeaveComment />
           </Route>
           <Route exact path="/review">
             <ReviewFeedback />
           </Route>
-          <Route exact path="/comment">
-            <LeaveComment />
+          <Route exact path="/submissionSuccess">
+            <SubmissionSuccess />
           </Route>
         </Router>
         <h4>Don't forget it!</h4>

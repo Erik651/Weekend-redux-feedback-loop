@@ -34,13 +34,14 @@ return(<>
   <section>
 <h2>How are you feeling today?</h2>
 <input
+data-testid="input"
 required
 placeholder="Feeling 1-5"
 value={scoreFeeling}
 onChange={(event) => setScoreFeeling(event.target.value)}/>
 Feeling? 
 
-<button onClick={handleClick}>Next</button>
+<button data-testid="next" onClick={handleClick}>Next</button>
 
   </section></>
 );
