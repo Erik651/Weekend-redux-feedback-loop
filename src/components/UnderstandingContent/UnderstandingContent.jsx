@@ -26,6 +26,7 @@ function UnderstandingContent() {
     dispatch(action);
 
     alert('Headed to Being Supported page');
+    console.log('history', history)
     history.push('/support')
   }
 return (<>
